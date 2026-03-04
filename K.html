@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدفع الإلكتروني الجزائرية - حلول رقمية آمنة</title>
+    <!-- تحسين محركات البحث (SEO) -->
+    <meta name="description" content="خدمات الدفع الإلكتروني في الجزائر: فتح حسابات، بطاقات افتراضية، شحن المحافظ، والدفع أونلاين بكل أمان وسرعة.">
+    <meta name="keywords" content="دفع إلكتروني الجزائر, بطاقات افتراضية, شحن حسابات, محافظ رقمية, دفع أونلاين">
+    <!-- خطوط جوجل العربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome للأيقونات (الإصدار 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #0f172a;
+            color: #f1f5f9;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* شريط التنقل */
+        .navbar {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #f1f5f9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* الأقسام العامة */
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #f1f5f9;
+        }
+
+        h2 span {
+            color: #38bdf8;
+        }
+
+        .section-desc {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        /* قسم البطل (Hero) */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #22c55e;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #38bdf8;
+            color: #38bdf8;
+            margin-right: 15px;
+        }
+
+        .btn-outline:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        /* بطاقات الخدمات */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: #1e293b;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #334155;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+            box-shadow: 0 20px 30px -10px #0f172a;
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #94a3b8;
+        }
+
+        /* المميزات */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-item {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border-bottom: 4px solid transparent;
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            border-bottom-color: #22c55e;
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: #22c55e;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* خطوات العمل */
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            flex: 1 1 200px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step .number {
+            background: #38bdf8;
+            color: #0f172a;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 0 5px #1e293b;
+        }
+
+        /* آراء العملاء */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .testimonial-card i {
+            color: #38bdf8;
+            font-size: 2rem;
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .testimonial-card p {
+            margin: 20px 0;
+            font-style: italic;
+            color: #cbd5e1;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #334155;
+        }
+
+        /* الأسئلة الشائعة */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #1e293b;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #2d3a4f;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #94a3b8;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* نموذج الاتصال */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .contact-item {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #38bdf8;
+        }
+
+        /* التذييل */
+        footer {
+            background: #1e293b;
+            padding: 40px 5% 20px;
+            border-top: 1px solid #334155;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #38bdf8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #38bdf8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #f1f5f9;
+            background: #334155;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* تجاوب للجوال */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-credit-card" style="margin-left: 8px;"></i> دفعك</div>
+        <div class="nav-links">
+            <a href="#home">الرئيسية</a>
+            <a href="#services">الخدمات</a>
+            <a href="#features">المميزات</a>
+            <a href="#contact">تواصل معنا</a>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي (Hero) -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>حلول <span>الدفع الإلكتروني</span> في الجزائر<br>بكل أمان وسرعة</h1>
+            <p>نوفر لك أحدث وسائل الدفع الرقمي، بطاقات افتراضية، وشحن الحسابات البنكية والمحافظ الإلكترونية.</p>
+            <div>
+                <a href="https://wa.me/213XXXXXXXXX" class="btn"><i class="fab fa-whatsapp" style="margin-left: 8px;"></i> تواصل عبر واتساب</a>
+                <a href="#services" class="btn btn-outline">اكتشف خدماتنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section id="services">
+        <div class="container">
+            <h2>خدماتنا <span>المتميزة</span></h2>
+            <p class="section-desc">نقدم لك مجموعة متكاملة من حلول الدفع الإلكتروني المصممة خصيصًا لتلبية احتياجاتك في الجزائر.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>فتح حسابات إلكترونية</h3>
+                    <p>نساعدك في فتح حسابات بنكية إلكترونية ومحافظ رقمية بسهولة تامة.</p>
+                </div>
+                <div class="service-card">
+                    <i class="far fa-credit-card"></i>
+                    <h3>بطاقات افتراضية</h3>
+                    <p>إصدار وتفعيل بطاقات افتراضية للدفع عبر الإنترنت على المواقع العالمية.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-coins"></i>
+                    <h3>شحن الحسابات</h3>
+                    <p>شحن حساباتك البنكية والمحافظ الرقمية بسرعة وأمان عبر طرق متعددة.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>الدفع أونلاين</h3>
+                    <p>تنفيذ عمليات الشراء والدفع من المواقع العالمية بكل سهولة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المميزات -->
+    <section id="features" style="background: #0b1120;">
+        <div class="container">
+            <h2>لماذا <span>نحن؟</span></h2>
+            <p class="section-desc">نضع ثقتك وأمان معاملاتك في مقدمة أولوياتنا.</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <h4>سرعة التنفيذ</h4>
+                    <p>نضمن لك إنجاز معاملاتك في أسرع وقت ممكن.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>أمان عالي</h4>
+                    <p>حماية متطورة لبياناتك ومعاملاتك المالية.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <h4>دعم فني 24/7</h4>
+                    <p>فريق متاح لمساعدتك في أي وقت.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h4>رسوم منافسة</h4>
+                    <p>أفضل الأسعار وأقل العمولات في السوق الجزائري.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم كيفية العمل -->
+    <section>
+        <div class="container">
+            <h2>كيف <span>تعمل الخدمة؟</span></h2>
+            <p class="section-desc">ثلاث خطوات بسيطة تفصلك عن عالم الدفع الإلكتروني.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="number">1</div>
+                    <h4>تواصل معنا</h4>
+                    <p>راسلنا عبر واتساب أو نموذج الاتصال.</p>
+                </div>
+                <div class="step">
+                    <div class="number">2</div>
+                    <h4>اختر الخدمة</h4>
+                    <p>حدد نوع الخدمة التي تحتاجها (حساب، بطاقة، شحن).</p>
+                </div>
+                <div class="step">
+                    <div class="number">3</div>
+                    <h4>استمتع بالخدمة</h4>
+                    <p>نقوم بتنفيذ طلبك بسرعة وتصلك الإشعارات فورًا.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- آراء العملاء -->
+    <section style="background: #0b1120;">
+        <div class="container">
+            <h2>ماذا قال <span>عملاؤنا؟</span></h2>
+            <p class="section-desc">نفخر بثقة عملائنا، وهذه بعض آرائهم.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right"></i>
+                    <p>خدمة رائعة وسريعة، ساعدوني في فتح حساب إلكتروني وتفعيل بطاقة فيزا خﻻل يوم واحد.</p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="عميل">
+                        <div>
+                            <h4>أحمد خالد</h4>
+                            <span style="color:#94a3b8;">الجزائر العاصمة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right"></i>
+                    <p>أفضل موقع للدفع الإلكتروني في الجزائر، شحن المحافظ يتم فوراً والدعم الفني ممتاز.</p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="عميلة">
+                        <div>
+                            <h4>سارة محمدي</h4>
+                            <span style="color:#94a3b8;">وهران</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right"></i>
+                    <p>بطاقات افتراضية آمنة وسهلة الاستخدام، أوصي به بشدة لكل من يريد الدفع أونلاين.</p>
+                    <div class="client-info">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="عميل">
+                        <div>
+                            <h4>كريم بن علي</h4>
+                            <span style="color:#94a3b8;">قسنطينة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الأسئلة الشائعة -->
+    <section id="faq">
+        <div class="container">
+            <h2>الأسئلة <span>الشائعة</span></h2>
+            <p class="section-desc">إجابات لأكثر الأسئلة التي تردنا.</p>
+            <div class="faq-grid">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>ما هي المستندات المطلوبة لفتح حساب إلكتروني؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        تحتاج فقط إلى بطاقة الهوية الوطنية أو جواز السفر، وبريد إلكتروني صحيح.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>هل البطاقات الافتراضية صالحة للاستخدام العالمي؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        نعم، البطاقات الافتراضية التي نوفرها هي (Visa/MasterCard) وتعمل على جميع المواقع الدولية.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>كم تستغرق عملية شحن الحساب؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        عادة ما تتم عملية الشحن خلال دقائق، وقد تصل إلى 24 ساعة في بعض الحالات النادرة.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>هل توجد عمولات خفية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        جميع العمولات والرسوم موضحة بشكل شفاف قبل تنفيذ أي خدمة، ولا توجد رسوم خفية.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الاتصال -->
+    <section id="contact" style="background: #0b1120;">
+        <div class="container">
+            <h2>تواصل <span>معنا</span></h2>
+            <p class="section-desc">نحن هنا للإجابة عن استفساراتك وتلبية طلباتك.</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>واتساب</h3>
+                    <a href="https://wa.me/213XXXXXXXXX">+213 123 456 789</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>البريد الإلكتروني</h3>
+                    <a href="mailto:info@daf3ak.dz">info@daf3ak.dz</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>الهاتف</h3>
+                    <a href="tel:+213123456789">+213 123 456 789</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>العنوان</h3>
+                    <p>الجزائر العاصمة، الجزائر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4><i class="fas fa-credit-card"></i> دفعك</h4>
+                <p>حلول الدفع الإلكتروني في الجزائر بكل أمان وموثوقية.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#faq">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>خدماتنا</h4>
+                <ul>
+                    <li><a href="#">فتح حسابات</a></li>
+                    <li><a href="#">بطاقات افتراضية</a></li>
+                    <li><a href="#">شحن الحسابات</a></li>
+                    <li><a href="#">الدفع أونلاين</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>الدعم</h4>
+                <ul>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">شروط الاستخدام</a></li>
+                    <li><a href="#">المساعدة</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 جميع الحقوق محفوظة - الدفع الإلكتروني الجزائرية
+        </div>
+    </footer>
+
+    <!-- كود بسيط للأسئلة الشائعة (Toggle) -->
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
